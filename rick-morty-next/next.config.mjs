@@ -1,19 +1,27 @@
 import NextFederationPlugin from "@module-federation/nextjs-mf";
-import packageJson from "../package.json";
-
-const deps = packageJson.dependencies;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
+  webpack: (config, options) => {
+    const { isServer } = options;
+
+    if (isServer) {
+      config.optimization.usedExports = false;
+    }
+
     config.plugins.push(
       new NextFederationPlugin({
         name: "app2",
-        filename: "static/runtime/remoteEntry.js",
+        filename: "static/chunks/remoteEntry.js",
         remotes: {},
-        exposes: {},
+        exposes: {
+          "./App": "./src/pages",
+        },
+        extraOptions: {
+          exposePages: true,
+          debug: true,
+        },
         shared: {
-          ...deps,
           react: { singleton: true, eager: true },
           "react-dom": { singleton: true, eager: true },
         },

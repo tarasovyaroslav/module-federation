@@ -7,7 +7,7 @@ module.exports = {
   mode: "development",
   devServer: {
     static: path.join(__dirname, "dist"),
-    port: 3000,
+    port: 3100,
   },
   output: {
     publicPath: "auto",
@@ -34,9 +34,9 @@ module.exports = {
       name: "host",
       // filename: "remoteEntry.js",
       remotes: {
-        app1: "app1@http://localhost:3001/remoteEntry.js",
-        // app2: "app2@http://localhost:3002/remoteEntry.js",
-        // app3: "app3@http://localhost:3003/remoteEntry.js",
+        app1: "app1@http://localhost:3101/remoteEntry.js",
+        app2: `app2@http://localhost:3102/_next/static/chunks/remoteEntry.js`,
+        app3: "app3@http://localhost:3103/remoteEntry.js",
       },
       shared: {
         react: { singleton: true, eager: true },

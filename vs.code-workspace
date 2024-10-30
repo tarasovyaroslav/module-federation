@@ -1,17 +1,20 @@
 {
   "folders": [
-	{
-		"path": "host-app"
-	},
-	{
-		"path": "auth-app"
-	},
-	{
-		"path": "rick-morty-next"
-	},
-	{
-		"path": "user-profile"
-	}
-],
+    {
+      "path": "host-app"
+    },
+    {
+      "path": "auth-app"
+    },
+    {
+      "path": "rick-morty-next"
+    },
+    {
+      "path": "user-profile"
+    },
+    {
+      "path": "."
+    }
+  ],
   "settings": {}
 }

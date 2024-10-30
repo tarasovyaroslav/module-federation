@@ -27,12 +27,15 @@ const App: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-      <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-      <button type="submit">Login</button>
-      <p>{message}</p>
-    </form>
+    <div>
+      <h2>Auth page</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
+        <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+        <button type="submit">Login</button>
+        <p>{message}</p>
+      </form>
+    </div>
   );
 };
 
