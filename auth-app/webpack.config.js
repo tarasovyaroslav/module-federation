@@ -31,7 +31,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "authApp",
+      name: "app1",
       filename: "remoteEntry.js",
       exposes: {
         "./App": "./src/App.tsx",

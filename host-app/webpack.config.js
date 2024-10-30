@@ -34,7 +34,7 @@ module.exports = {
       name: "host",
       // filename: "remoteEntry.js",
       remotes: {
-        authApp: "authApp@http://localhost:3001/remoteEntry.js",
+        app1: "app1@http://localhost:3001/remoteEntry.js",
         // app2: "app2@http://localhost:3002/remoteEntry.js",
         // app3: "app3@http://localhost:3003/remoteEntry.js",
       },
