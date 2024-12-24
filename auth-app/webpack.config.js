@@ -8,6 +8,7 @@ module.exports = {
   devServer: {
     static: path.join(__dirname, "dist"),
     port: 3101,
+    historyApiFallback: true,
   },
   output: {
     publicPath: "auto",
@@ -18,6 +19,9 @@ module.exports = {
       ".js": [".js", ".ts"],
       ".cjs": [".cjs", ".cts"],
       ".mjs": [".mjs", ".mts"],
+    },
+    alias: {
+      "@": path.resolve(__dirname, "src/"),
     },
   },
   module: {
@@ -31,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "app1",
+      name: "authApp",
       filename: "remoteEntry.js",
       exposes: {
         "./App": "./src/App.tsx",

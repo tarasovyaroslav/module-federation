@@ -8,6 +8,7 @@ module.exports = {
   devServer: {
     static: path.join(__dirname, "dist"),
     port: 3100,
+    historyApiFallback: true,
   },
   output: {
     publicPath: "auto",
@@ -18,6 +19,9 @@ module.exports = {
       ".js": [".js", ".ts"],
       ".cjs": [".cjs", ".cts"],
       ".mjs": [".mjs", ".mts"],
+    },
+    alias: {
+      "@": path.resolve(__dirname, "src/"),
     },
   },
   module: {
@@ -34,7 +38,7 @@ module.exports = {
       name: "host",
       // filename: "remoteEntry.js",
       remotes: {
-        app1: "app1@http://localhost:3101/remoteEntry.js",
+        authApp: "authApp@http://localhost:3101/remoteEntry.js",
         app2: `app2@http://localhost:3102/_next/static/chunks/remoteEntry.js`,
         app3: "app3@http://localhost:3103/remoteEntry.js",
       },
